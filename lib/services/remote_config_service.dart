@@ -6,10 +6,17 @@ part 'remote_config_service.g.dart';
 @riverpod
 Future<String> fetchRemoteConfig(Ref ref, {required String key}) async {
   final remoteConfig = FirebaseRemoteConfig.instance;
+
+  await remoteConfig.setDefaults({
+    'primaryColor': 'blue',
+    'buttonText': 'Click Me!',
+    'welcomeMessage': 'Welcome to our app!',
+  });
+
   await remoteConfig.setConfigSettings(
     RemoteConfigSettings(
       fetchTimeout: const Duration(seconds: 10),
-      minimumFetchInterval: const Duration(seconds: 5),
+      minimumFetchInterval: const Duration(seconds: 1),
     ),
   );
 
@@ -21,15 +28,22 @@ Future<String> fetchRemoteConfig(Ref ref, {required String key}) async {
 @riverpod
 Stream<String> fetchStringConfigStream(Ref ref, {required String key}) async* {
   final remoteConfig = FirebaseRemoteConfig.instance;
+
+  await remoteConfig.setDefaults({
+    'primaryColor': 'blue',
+    'buttonText': 'Click Me!',
+    'welcomeMessage': 'Welcome to our app!',
+  });
+
   await remoteConfig.setConfigSettings(RemoteConfigSettings(
     fetchTimeout: const Duration(seconds: 10),
-    minimumFetchInterval: const Duration(seconds: 10),
+    minimumFetchInterval: const Duration(seconds: 1),
   ));
-  
+
   await remoteConfig.fetchAndActivate();
   final initialValue = remoteConfig.getString(key);
   yield initialValue;
-  
+
   await for (final _ in remoteConfig.onConfigUpdated) {
     try {
       await remoteConfig.activate();

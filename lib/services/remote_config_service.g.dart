@@ -6,7 +6,7 @@ part of 'remote_config_service.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$fetchRemoteConfigHash() => r'e31f604fb9cf002870720caf31ac15fc9fd011a1';
+String _$fetchRemoteConfigHash() => r'6034326df44545f9ee04569d3b1c12f701f989dc';
 
 /// Copied from Dart SDK
 class _SystemHash {
@@ -158,7 +158,7 @@ class _FetchRemoteConfigProviderElement
 }
 
 String _$fetchStringConfigStreamHash() =>
-    r'8a527865cedd7a9aa80d586becc788c733d03491';
+    r'8e7a87358b25a48ee76697f6e284593f0fddea84';
 
 /// See also [fetchStringConfigStream].
 @ProviderFor(fetchStringConfigStream)

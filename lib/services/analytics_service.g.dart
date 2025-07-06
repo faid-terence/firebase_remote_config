@@ -1,0 +1,43 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+part of 'analytics_service.dart';
+
+// **************************************************************************
+// RiverpodGenerator
+// **************************************************************************
+
+String _$analyticsHash() => r'3cadef040f57d6654e114b013f9963cf9327cf4e';
+
+/// See also [analytics].
+@ProviderFor(analytics)
+final analyticsProvider = AutoDisposeProvider<FirebaseAnalytics>.internal(
+  analytics,
+  name: r'analyticsProvider',
+  debugGetCreateSourceHash:
+      const bool.fromEnvironment('dart.vm.product') ? null : _$analyticsHash,
+  dependencies: null,
+  allTransitiveDependencies: null,
+);
+
+@Deprecated('Will be removed in 3.0. Use Ref instead')
+// ignore: unused_element
+typedef AnalyticsRef = AutoDisposeProviderRef<FirebaseAnalytics>;
+String _$analyticsServiceHash() => r'a78e9020e79b5e99632cc4cee7e5f7156c672acd';
+
+/// See also [analyticsService].
+@ProviderFor(analyticsService)
+final analyticsServiceProvider = AutoDisposeProvider<AnalyticsService>.internal(
+  analyticsService,
+  name: r'analyticsServiceProvider',
+  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+      ? null
+      : _$analyticsServiceHash,
+  dependencies: null,
+  allTransitiveDependencies: null,
+);
+
+@Deprecated('Will be removed in 3.0. Use Ref instead')
+// ignore: unused_element
+typedef AnalyticsServiceRef = AutoDisposeProviderRef<AnalyticsService>;
+// ignore_for_file: type=lint
+// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package
