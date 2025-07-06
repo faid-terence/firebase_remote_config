@@ -6,7 +6,7 @@ part of 'remote_config_service.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$fetchRemoteConfigHash() => r'6034326df44545f9ee04569d3b1c12f701f989dc';
+String _$fetchRemoteConfigHash() => r'64f965aa2bdfe8323a7679049c386d5948685050';
 
 /// Copied from Dart SDK
 class _SystemHash {
@@ -40,7 +40,7 @@ class FetchRemoteConfigFamily extends Family<AsyncValue<String>> {
 
   /// See also [fetchRemoteConfig].
   FetchRemoteConfigProvider call({
-    required String key,
+    required RemoteConfigKey key,
   }) {
     return FetchRemoteConfigProvider(
       key: key,
@@ -75,7 +75,7 @@ class FetchRemoteConfigFamily extends Family<AsyncValue<String>> {
 class FetchRemoteConfigProvider extends AutoDisposeFutureProvider<String> {
   /// See also [fetchRemoteConfig].
   FetchRemoteConfigProvider({
-    required String key,
+    required RemoteConfigKey key,
   }) : this._internal(
           (ref) => fetchRemoteConfig(
             ref as FetchRemoteConfigRef,
@@ -103,7 +103,7 @@ class FetchRemoteConfigProvider extends AutoDisposeFutureProvider<String> {
     required this.key,
   }) : super.internal();
 
-  final String key;
+  final RemoteConfigKey key;
 
   @override
   Override overrideWith(
@@ -146,7 +146,7 @@ class FetchRemoteConfigProvider extends AutoDisposeFutureProvider<String> {
 // ignore: unused_element
 mixin FetchRemoteConfigRef on AutoDisposeFutureProviderRef<String> {
   /// The parameter `key` of this provider.
-  String get key;
+  RemoteConfigKey get key;
 }
 
 class _FetchRemoteConfigProviderElement
@@ -154,11 +154,11 @@ class _FetchRemoteConfigProviderElement
   _FetchRemoteConfigProviderElement(super.provider);
 
   @override
-  String get key => (origin as FetchRemoteConfigProvider).key;
+  RemoteConfigKey get key => (origin as FetchRemoteConfigProvider).key;
 }
 
 String _$fetchStringConfigStreamHash() =>
-    r'8e7a87358b25a48ee76697f6e284593f0fddea84';
+    r'28e3c5cbdb5cf86ccd98fb3edf7c03cbcfed3be7';
 
 /// See also [fetchStringConfigStream].
 @ProviderFor(fetchStringConfigStream)
@@ -171,7 +171,7 @@ class FetchStringConfigStreamFamily extends Family<AsyncValue<String>> {
 
   /// See also [fetchStringConfigStream].
   FetchStringConfigStreamProvider call({
-    required String key,
+    required RemoteConfigKey key,
   }) {
     return FetchStringConfigStreamProvider(
       key: key,
@@ -207,7 +207,7 @@ class FetchStringConfigStreamProvider
     extends AutoDisposeStreamProvider<String> {
   /// See also [fetchStringConfigStream].
   FetchStringConfigStreamProvider({
-    required String key,
+    required RemoteConfigKey key,
   }) : this._internal(
           (ref) => fetchStringConfigStream(
             ref as FetchStringConfigStreamRef,
@@ -235,7 +235,7 @@ class FetchStringConfigStreamProvider
     required this.key,
   }) : super.internal();
 
-  final String key;
+  final RemoteConfigKey key;
 
   @override
   Override overrideWith(
@@ -278,7 +278,7 @@ class FetchStringConfigStreamProvider
 // ignore: unused_element
 mixin FetchStringConfigStreamRef on AutoDisposeStreamProviderRef<String> {
   /// The parameter `key` of this provider.
-  String get key;
+  RemoteConfigKey get key;
 }
 
 class _FetchStringConfigStreamProviderElement
@@ -287,7 +287,7 @@ class _FetchStringConfigStreamProviderElement
   _FetchStringConfigStreamProviderElement(super.provider);
 
   @override
-  String get key => (origin as FetchStringConfigStreamProvider).key;
+  RemoteConfigKey get key => (origin as FetchStringConfigStreamProvider).key;
 }
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package

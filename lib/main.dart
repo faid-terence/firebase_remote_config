@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_remote_config_app_example/firebase_options.dart';
+import 'package:flutter_remote_config_app_example/models/remote_config_keys.dart';
 import 'package:flutter_remote_config_app_example/services/analytics_service.dart';
 import 'package:flutter_remote_config_app_example/services/remote_config_service.dart';
 import 'package:flutter_remote_config_app_example/utils/color_util.dart';
@@ -22,7 +23,8 @@ class MyApp extends StatelessWidget {
     return Consumer(
       builder: (context, ref, child) {
         Color color = ref
-            .watch(fetchStringConfigStreamProvider(key: 'primaryColor'))
+            .watch(fetchStringConfigStreamProvider(
+                key: RemoteConfigKey.primaryColor))
             .when(
           data: (data) {
             return getColor(data);
@@ -116,7 +118,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     builder: (context, ref, child) {
                       return ref
                           .watch(fetchStringConfigStreamProvider(
-                              key: 'primaryColor'))
+                              key: RemoteConfigKey.primaryColor))
                           .when(
                             data: (colorValue) {
                               WidgetsBinding.instance.addPostFrameCallback((_) {
@@ -188,7 +190,8 @@ class _MyHomePageState extends State<MyHomePage> {
       floatingActionButton: Consumer(
         builder: (context, ref, child) {
           return ref
-              .watch(fetchStringConfigStreamProvider(key: 'buttonText'))
+              .watch(fetchStringConfigStreamProvider(
+                  key: RemoteConfigKey.buttonText))
               .when(
                 data: (buttonText) => FloatingActionButton.extended(
                   onPressed: _incrementCounter,
