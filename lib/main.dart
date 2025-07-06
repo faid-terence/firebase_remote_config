@@ -17,8 +17,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return Consumer(
       builder: (context, ref, child) {
-        Color color =
-            ref.watch(fetchRemoteConfigProvider(key: 'primaryColor')).when(
+        Color color = ref
+            .watch(fetchStringConfigStreamProvider(key: 'primaryColor'))
+            .when(
           data: (data) {
             return getColor(data);
           },

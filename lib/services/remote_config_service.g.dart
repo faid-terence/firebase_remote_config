@@ -6,7 +6,7 @@ part of 'remote_config_service.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$fetchRemoteConfigHash() => r'ec0c009c2f8302775b65384728c3686ba6f3d8a8';
+String _$fetchRemoteConfigHash() => r'e31f604fb9cf002870720caf31ac15fc9fd011a1';
 
 /// Copied from Dart SDK
 class _SystemHash {
@@ -155,6 +155,139 @@ class _FetchRemoteConfigProviderElement
 
   @override
   String get key => (origin as FetchRemoteConfigProvider).key;
+}
+
+String _$fetchStringConfigStreamHash() =>
+    r'8a527865cedd7a9aa80d586becc788c733d03491';
+
+/// See also [fetchStringConfigStream].
+@ProviderFor(fetchStringConfigStream)
+const fetchStringConfigStreamProvider = FetchStringConfigStreamFamily();
+
+/// See also [fetchStringConfigStream].
+class FetchStringConfigStreamFamily extends Family<AsyncValue<String>> {
+  /// See also [fetchStringConfigStream].
+  const FetchStringConfigStreamFamily();
+
+  /// See also [fetchStringConfigStream].
+  FetchStringConfigStreamProvider call({
+    required String key,
+  }) {
+    return FetchStringConfigStreamProvider(
+      key: key,
+    );
+  }
+
+  @override
+  FetchStringConfigStreamProvider getProviderOverride(
+    covariant FetchStringConfigStreamProvider provider,
+  ) {
+    return call(
+      key: provider.key,
+    );
+  }
+
+  static const Iterable<ProviderOrFamily>? _dependencies = null;
+
+  @override
+  Iterable<ProviderOrFamily>? get dependencies => _dependencies;
+
+  static const Iterable<ProviderOrFamily>? _allTransitiveDependencies = null;
+
+  @override
+  Iterable<ProviderOrFamily>? get allTransitiveDependencies =>
+      _allTransitiveDependencies;
+
+  @override
+  String? get name => r'fetchStringConfigStreamProvider';
+}
+
+/// See also [fetchStringConfigStream].
+class FetchStringConfigStreamProvider
+    extends AutoDisposeStreamProvider<String> {
+  /// See also [fetchStringConfigStream].
+  FetchStringConfigStreamProvider({
+    required String key,
+  }) : this._internal(
+          (ref) => fetchStringConfigStream(
+            ref as FetchStringConfigStreamRef,
+            key: key,
+          ),
+          from: fetchStringConfigStreamProvider,
+          name: r'fetchStringConfigStreamProvider',
+          debugGetCreateSourceHash:
+              const bool.fromEnvironment('dart.vm.product')
+                  ? null
+                  : _$fetchStringConfigStreamHash,
+          dependencies: FetchStringConfigStreamFamily._dependencies,
+          allTransitiveDependencies:
+              FetchStringConfigStreamFamily._allTransitiveDependencies,
+          key: key,
+        );
+
+  FetchStringConfigStreamProvider._internal(
+    super._createNotifier, {
+    required super.name,
+    required super.dependencies,
+    required super.allTransitiveDependencies,
+    required super.debugGetCreateSourceHash,
+    required super.from,
+    required this.key,
+  }) : super.internal();
+
+  final String key;
+
+  @override
+  Override overrideWith(
+    Stream<String> Function(FetchStringConfigStreamRef provider) create,
+  ) {
+    return ProviderOverride(
+      origin: this,
+      override: FetchStringConfigStreamProvider._internal(
+        (ref) => create(ref as FetchStringConfigStreamRef),
+        from: from,
+        name: null,
+        dependencies: null,
+        allTransitiveDependencies: null,
+        debugGetCreateSourceHash: null,
+        key: key,
+      ),
+    );
+  }
+
+  @override
+  AutoDisposeStreamProviderElement<String> createElement() {
+    return _FetchStringConfigStreamProviderElement(this);
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return other is FetchStringConfigStreamProvider && other.key == key;
+  }
+
+  @override
+  int get hashCode {
+    var hash = _SystemHash.combine(0, runtimeType.hashCode);
+    hash = _SystemHash.combine(hash, key.hashCode);
+
+    return _SystemHash.finish(hash);
+  }
+}
+
+@Deprecated('Will be removed in 3.0. Use Ref instead')
+// ignore: unused_element
+mixin FetchStringConfigStreamRef on AutoDisposeStreamProviderRef<String> {
+  /// The parameter `key` of this provider.
+  String get key;
+}
+
+class _FetchStringConfigStreamProviderElement
+    extends AutoDisposeStreamProviderElement<String>
+    with FetchStringConfigStreamRef {
+  _FetchStringConfigStreamProviderElement(super.provider);
+
+  @override
+  String get key => (origin as FetchStringConfigStreamProvider).key;
 }
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package
